@@ -41,6 +41,14 @@
             <version>${java-annotation.version}</version>
         </dependency>
 
+        <!-- Java Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -82,6 +90,7 @@
     </build>
 
     <properties>
+        <servlet-api.version>3.1.0</servlet-api.version>
         <java-annotation.version>1.3.2</java-annotation.version>
         <logback.version>1.2.3</logback.version>
         <lombok.version>1.18.20</lombok.version>
