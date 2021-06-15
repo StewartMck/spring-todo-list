@@ -1,6 +1,9 @@
 package ca.smckinlay.controller;
 
+import ca.smckinlay.services.DemoService;
+import ca.smckinlay.services.DemoServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +13,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @Slf4j
 public class DemoController {
+
+
+    // == fields ==
+    private final DemoService demoService;
+
+    // == constructors ==
+    @Autowired
+    public DemoController(DemoService demoService) {
+       this.demoService = demoService;
+    }
+
+    // == request methods ==
 
     // http://localhost:8080/todo-list/hello
     @ResponseBody
@@ -24,7 +39,7 @@ public class DemoController {
     @GetMapping("welcome")
     public String welcome(Model model) {
         // key/value pair to model --> can use in jsp
-        model.addAttribute("user", "Stewart");
+        model.addAttribute("msg", demoService.getHelloMessage("Stewart"));
         log.info("model= ${}", model);
         // prefix + name + suffix = created from view resolver
         // WEB-INF/view/welcome.jsp
@@ -32,11 +47,11 @@ public class DemoController {
         return "welcome";
     }
 
-
+    // == Model attributes ==
     @ModelAttribute("welcomeMessage")
     public String welcomeMessage() {
         log.info("welcomeMessage() called");
-        return "Welcome to this DEMO application";
+        return demoService.getWelcomeMessage();
     }
 
 }
