@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -35,11 +36,13 @@ public class DemoController {
     }
 
     // http://localhost:8080/todo-list/welcome
+    // http://localhost:8080/todo-list/welcome?user=Stewart
 
     @GetMapping("welcome")
-    public String welcome(Model model) {
+    public String welcome(@RequestParam String user, @RequestParam int age, Model model) {
         // key/value pair to model --> can use in jsp
-        model.addAttribute("msg", demoService.getHelloMessage("Stewart"));
+        model.addAttribute("msg", demoService.getHelloMessage(user));
+        model.addAttribute("age", age);
         log.info("model= ${}", model);
         // prefix + name + suffix = created from view resolver
         // WEB-INF/view/welcome.jsp
