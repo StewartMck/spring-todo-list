@@ -2,6 +2,7 @@ ca\smckinlay\config\WebAppInitializer.class
 ca\smckinlay\services\TodoItemsServiceImpl.class
 ca\smckinlay\services\DemoService.class
 ca\smckinlay\controller\ToDoItemController.class
+ca\smckinlay\util\AttributeNames.class
 ca\smckinlay\util\Mappings.class
 ca\smckinlay\model\TodoData.class
 ca\smckinlay\model\ToDoItem.class

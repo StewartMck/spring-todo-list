@@ -2,6 +2,7 @@ package ca.smckinlay.services;
 
 import ca.smckinlay.model.ToDoItem;
 import ca.smckinlay.model.TodoData;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoItemsServiceImpl implements TodoItemService{
 
-    private final static TodoData data = new TodoData();
+    // == fields ==
+    @Getter
+    private final TodoData data = new TodoData();
+
+    // == public methods ==
 
     @Override
     public void addItem(ToDoItem item) {
@@ -31,8 +36,8 @@ public class TodoItemsServiceImpl implements TodoItemService{
         updateItem(item);
     }
 
-    @Override
-    public TodoData getData() {
-        return data;
-    }
+//    @Override
+//    public TodoData getData() {
+//        return data;
+//    }
 }
