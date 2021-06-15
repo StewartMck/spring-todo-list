@@ -1,10 +1,12 @@
-ca\smckinlay\model\TodoData.class
 ca\smckinlay\config\WebAppInitializer.class
-ca\smckinlay\model\ToDoItem.class
-ca\smckinlay\util\ViewNames.class
-ca\smckinlay\controller\DemoController.class
+ca\smckinlay\services\TodoItemsServiceImpl.class
 ca\smckinlay\services\DemoService.class
 ca\smckinlay\controller\ToDoItemController.class
 ca\smckinlay\util\Mappings.class
+ca\smckinlay\model\TodoData.class
+ca\smckinlay\model\ToDoItem.class
+ca\smckinlay\util\ViewNames.class
+ca\smckinlay\controller\DemoController.class
+ca\smckinlay\services\TodoItemService.class
 ca\smckinlay\services\DemoServiceImpl.class
 ca\smckinlay\config\WebConfig.class
