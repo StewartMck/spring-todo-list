@@ -17,6 +17,10 @@
                 </tr>
                 <c:forEach var="item" items="${todoData.items}">
 
+                <c:url var="viewUrl" value="${Mappings.ITEM}">
+                <c:param name="id" value="${item.id}"/>
+                </c:url>
+
                 <c:url var="editUrl" value="${Mappings.ADD_ITEM}">
                 <c:param name="id" value="${item.id}"/>
                 </c:url>
@@ -26,7 +30,9 @@
                 </c:url>
 
                     <tr>
-                        <td><c:out value="${item.title}"/></td>
+                        <td>
+                            <a href="${viewUrl}"><c:out value="${item.title}"/></a>
+                        </td>
                         <td><c:out value="${item.deadline}"/></td>
                         <td>
                             <a href="${editUrl}">Edit</a>
