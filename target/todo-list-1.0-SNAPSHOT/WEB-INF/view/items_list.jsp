@@ -1,4 +1,5 @@
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@ page import="ca.smckinlay.util.Mappings" %>
  <jsp:include page="_header.jsp">
        <jsp:param name="title" value="Todo Items" />
     </jsp:include>
