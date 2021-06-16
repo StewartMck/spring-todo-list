@@ -28,12 +28,12 @@ public class TodoItemsServiceImpl implements TodoItemService{
 
     @Override
     public ToDoItem getItem(int id) {
-        return getItem(id);
+        return data.getItem(id);
     }
 
     @Override
     public void updateItem(ToDoItem item) {
-        updateItem(item);
+        data.updateItem(item);
     }
 
 //    @Override
